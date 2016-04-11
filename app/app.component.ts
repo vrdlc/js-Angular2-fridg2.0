@@ -1,28 +1,6 @@
 import { Component, EventEmitter } from 'angular2/core';
-
-
-@Component({
-  selector: 'shopping-list',
-  inputs: ['shoppingList'],
-  outputs: ['onShoppingSelect'],
-  template: `
-  <h3 *ngFor="#currentShopping of shoppingList" (click)="shoppingClicked(currentShopping)">
-  {{ currentShopping.description }}
-  </h3>
-  `
-})
-export class ShoppingListComponent {
-  public shoppingList: Shopping[];
-  public onShoppingSelect: EventEmitter<Shopping>;
-  constructor() {
-    this.onShoppingSelect = new EventEmitter();
-  }
-  shoppingClicked(clickedShopping: Shopping): void {
-    console.log('child', clickedShopping);
-    this.onShoppingSelect.emit(clickedShopping);
-  }
-}
-
+import { ShoppingListComponent } from './shopping-list.component';
+import { Shopping } from './shopping.model';
 
 
 @Component({
@@ -30,9 +8,10 @@ export class ShoppingListComponent {
   directives: [ShoppingListComponent],
   template: `
   <div class="container">
-  <h1>Shopping List</h1>
-  <shopping-list [shoppingList]="shoppings" (onShoppingSelect)="shoppingWasSelected($event)">
-  </shopping-list>
+    <h1>Shopping List</h1>
+    <shopping-list
+    [shoppingList]="shoppings" (onShoppingSelect)="shoppingWasSelected($event)">
+    </shopping-list>
   </div>
   `
 })
@@ -47,11 +26,5 @@ export class AppComponent {
   }
   shoppingWasSelected(clickedShopping: Shopping): void {
     console.log('parent', clickedShopping);
-  }
-}
-
-export class Shopping {
-  constructor(public description: string, public id: number) {
-
   }
 }
