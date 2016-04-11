@@ -15,6 +15,8 @@ TO DO:
 
 * As a user, I want to be able to drag and drop items to a different list.
 
+* As as user, I want to be able to see generally when my food will expire (if we have time)
+
 
 DONE:
 
