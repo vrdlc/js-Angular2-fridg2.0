@@ -5,6 +5,7 @@ TO DO:
 * Database (Firebase?)
 * API integration
 * Time based expiration dates, reminders (Moment.js?)
+* User authentication
 
 * As a user, I want to be able to enter an item on a shopping or pantry list.
 
