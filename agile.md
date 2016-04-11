@@ -27,3 +27,29 @@ PENDING:
 NOTES:
 
 * DO WE WANT MULTIPLE PAGES?
+
+
+
+ROUTES:
+
+* Index (with search to search nutrition API)
+
+
+
+COMPONENTS: 
+* Item display (two service buttons, one for shopping, one for list)
+* navbar display (wrap around 'outlet' in application.hbs) 
+* display shopping
+* display pantry
+* 
+
+
+SERVICES:
+* shopping/grocery
+* pantry
+* 
+
+
+SPARKLES:
+* user login
+* calorie counter? (computed property)
